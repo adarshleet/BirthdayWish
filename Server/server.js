@@ -2,6 +2,7 @@ import express from 'express'
 const app = express();
 import cors from 'cors'
 import { dbConnect } from './src/config/dbConnect.js';
+import { wishRoute } from './src/controller/wishController.js';
 
 dbConnect()
 
@@ -15,6 +16,8 @@ app.use(
     credentials: true, // If you need to send cookies or authentication headers
     })
 );
+
+app.use('/',wishRoute)
 
 
 app.listen(3000,()=>{

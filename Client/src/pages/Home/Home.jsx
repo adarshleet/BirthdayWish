@@ -4,7 +4,7 @@ import Form from '../../components/Form'
 
 const Home = () => {
     return (
-        <div className='flex items-center w-full h-screen flex-col bg-gray-900 p-10'>
+        <div className='flex items-center w-full min-h-screen flex-col bg-gray-900 p-10'>
             <div className='text-white font-playwrite-ng text-center space-y-4'>
                 <div className='flex justify-center items-center'>
                     <img src={pastry} className='w-10 md:w-20' alt="candle" />
