@@ -32,7 +32,10 @@ const Form = () => {
     const formdata = new FormData()
     console.log(name)
     formdata.append('name',name)
+    formdata.append('song',songLink)
     formdata.append('image',image)
+    formdata.append('songStartTime',startTime)
+    formdata.append('wish',wish)
     const res = await Api.post('/createWish',formdata)
   }
 
@@ -53,9 +56,12 @@ const Form = () => {
               Select Image
             </button>
           </div>
+          {image && 
           <div className=' overflow-hidden w-40 h-40 rounded-full'>
-            <img className='object-cover h-full w-full' src="https://media.istockphoto.com/id/1445226966/photo/girl-friends-hug-and-travel-summer-vacation-outdoors-on-safari-diverse-happy-gen-z-women.jpg?s=612x612&w=0&k=20&c=z_DETd4pW-4bdmIu57CDRqZ56Y6uydUl55VPRsoKXtM=" alt="" />
-          </div>
+            <img className='object-cover h-full w-full' 
+            src={URL.createObjectURL(image)}
+            alt="" />
+          </div>}
         </div>
         <div className=''>
           <button className='text-black mt-2 rounded-lg w-full font-bold bg-slate-400 p-3'>Generate Wish Page</button>

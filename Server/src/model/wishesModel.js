@@ -4,16 +4,19 @@ const wishesSchema = mongoose.Schema({
     name:{
         type:String
     },
-    wishDetails:{
+    wish:{
         type:String
     },
     image:{
-        type:String
+        type:Object
     },
     song:{
         type:String
     },
     songStartTime:{
+        type:String
+    },
+    params:{
         type:String
     }
 })
