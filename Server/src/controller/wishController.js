@@ -12,7 +12,7 @@ wishRoute.post('/createWish',multerMid.single('image'),async (req,res)=>{
         
         //creating params unique code
         const number = Math.floor(1000 + Math.random() * 9000);
-        wishDetails.params = wishDetails.name.toLowerCase() + number
+        wishDetails.params = wishDetails.name.toLowerCase().replace(/\s+/g, '') + number
 
         const newWish = new Wishes(wishDetails);
         const response = await newWish.save();

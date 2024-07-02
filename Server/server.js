@@ -5,6 +5,8 @@ import { wishRoute } from './src/controller/wishController.js';
 import path,{ dirname }  from 'path'
 import { fileURLToPath } from 'url';
 // import ddd from '../Server/src/public/images'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +18,7 @@ const app = express();
 
 app.use(
     cors({
-    origin: 'http://localhost:5000',
+    origin: process.env.CORS_URL,
     credentials: true, // If you need to send cookies or authentication headers
     })
 );
